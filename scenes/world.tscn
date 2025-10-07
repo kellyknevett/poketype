@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2i7befy745bb"]
+[gd_scene load_steps=22 format=3 uid="uid://c2i7befy745bb"]
 
 [ext_resource type="Script" uid="uid://24q8ntoskfoj" path="res://world.gd" id="1_w7kh3"]
 [ext_resource type="Script" uid="uid://bntpbjw2xgbff" path="res://gui.gd" id="2_e3hyu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://gtnt0pfwdsrg" path="res://gfx/NUGGET.png" id="5_o8fc1"]
 [ext_resource type="Shader" uid="uid://bxx6anwmvvvqo" path="res://gfx/outline.gdshader" id="6_xo05s"]
 [ext_resource type="Texture2D" uid="uid://cxwcfnh86ieok" path="res://gfx/SNORLAX.png" id="7_dss4m"]
+[ext_resource type="Script" uid="uid://bn621ggucsx6q" path="res://scenes/level_label.gd" id="7_q5onr"]
 [ext_resource type="Script" uid="uid://den0tqsbf1es3" path="res://main_pokemon.gd" id="8_7t5mc"]
 [ext_resource type="AudioStream" uid="uid://b7pecrecmq4qn" path="res://audio/normaldamage.ogg" id="9_lakw3"]
 [ext_resource type="PackedScene" uid="uid://n2gqfog4lvsj" path="res://scenes/Enemy.tscn" id="10_pm21f"]
@@ -167,6 +168,7 @@ size_flags_vertical = 3
 script = ExtResource("2_e3hyu")
 
 [node name="scrolling_bg" type="TextureRect" parent="GUI"]
+visible = false
 modulate = Color(1, 1, 1, 0.1764706)
 z_index = -1
 layout_mode = 0
@@ -266,9 +268,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Level up!"
 
-[node name="Label" type="Label" parent="GUI/LevelUpVBox/LevelUpHBox"]
+[node name="LevelLabel" type="Label" parent="GUI/LevelUpVBox/LevelUpHBox"]
 layout_mode = 2
 text = "1"
+script = ExtResource("7_q5onr")
 
 [node name="MainPokemon" type="Sprite2D" parent="."]
 unique_name_in_owner = true
